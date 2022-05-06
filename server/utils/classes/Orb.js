@@ -1,4 +1,4 @@
-const settings = require("../../../settings");
+const settings = require("../../settings");
 
 class Orb {
   constructor(playerNum, locX, locY, vecX, vecY) {

@@ -1,7 +1,7 @@
 const Pickup = require("../classes/Pickup");
 const Orb = require("./Orb");
 
-const settings = require("../../../settings");
+const settings = require("../../settings");
 
 class GameRoom {
   constructor(roomId) {

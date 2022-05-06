@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Head from "next/head";
+import { useSelector } from "react-redux";
 
 import classes from "../styles/HowToPlay.module.css";
-import settings from "../utils/settings";
 
 const howToPlay = () => {
+  const settings = useSelector((state) => state.gameDetails.settings);
+
   return (
     <>
       <Head>

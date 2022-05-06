@@ -16,7 +16,7 @@ const io = socketio(expressServer, {
 const GameRoom = require("./utils/classes/GameRoom");
 const Player = require("./utils/classes/Player");
 
-const settings = require("../settings");
+const settings = require("./settings");
 
 const checkAndUpdateCollisions = require("./utils/checkAndUpdateCollisions");
 const checkAndUpdatePositions = require("./utils/checkAndUpdatePositions");
@@ -71,6 +71,10 @@ setInterval(() => {
 }, 33);
 
 io.on("connection", (socket) => {
+  socket.on("get-settings", () => {
+    socket.emit("settings-received", settings);
+  });
+
   socket.on("create-room", () => {
     const roomCode = randomstring.generate();
     const player = new Player(

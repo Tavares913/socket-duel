@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -22,6 +22,12 @@ const Home = () => {
   };
 
   useEffect(() => {
+    socket.emit("get-settings");
+
+    socket.on("settings-received", (settings) => {
+      dispatch(gameDetailsActions.setSettings(settings));
+    });
+
     socket.on("room-created", (roomId) => {
       dispatch(gameDetailsActions.setRoomId(roomId));
       dispatch(gameDetailsActions.setPlayerNum(1));

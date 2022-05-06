@@ -1,5 +1,4 @@
 import drawingDetails from "./drawingDetails";
-import settings from "../../settings";
 
 const getContext = () => {
   let canvas = document.getElementById("game-area");
@@ -8,13 +7,16 @@ const getContext = () => {
   return context;
 };
 
-const updateScreen = () => {
+const updateScreen = (settings) => {
   let ctx = getContext();
 
+  console.log(settings.fieldWidth, settings.fieldHeight);
   ctx.clearRect(0, 0, settings.fieldWidth, settings.fieldHeight);
 
   if (drawingDetails == null) {
-    requestAnimationFrame(updateScreen);
+    requestAnimationFrame(() => {
+      updateScreen(settings);
+    });
     return;
   } else if (drawingDetails.gameEnded) {
     return;
@@ -42,7 +44,9 @@ const updateScreen = () => {
     ctx.stroke();
   }
 
-  requestAnimationFrame(updateScreen);
+  requestAnimationFrame(() => {
+    updateScreen(settings);
+  });
 };
 
 export default updateScreen;

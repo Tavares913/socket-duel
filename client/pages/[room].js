@@ -6,7 +6,6 @@ import socket from "../utils/socketConnect";
 import { useSelector } from "react-redux";
 import updateScreen from "../utils/updateScreen";
 import drawingDetails from "../utils/drawingDetails";
-import settings from "../../settings";
 
 import classes from "../styles/Room.module.css";
 
@@ -22,6 +21,7 @@ const Room = () => {
 
   const roomId = useSelector((state) => state.gameDetails.roomId);
   const playerNum = useSelector((state) => state.gameDetails.playerNum);
+  const settings = useSelector((state) => state.gameDetails.settings);
   let direction = null;
 
   const startGameHandler = () => {
@@ -52,7 +52,7 @@ const Room = () => {
       setGameInProgress(true);
       setRoundInProgress(true);
       setGameStartError(false);
-      updateScreen();
+      updateScreen(settings);
     });
 
     socket.on("game-start-error", () => {
