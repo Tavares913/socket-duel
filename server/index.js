@@ -150,6 +150,19 @@ io.on("connection", (socket) => {
       shotDelay = Date.now();
     }
   });
+
+  socket.on("disconnecting", () => {
+    let roomId;
+    for (let room of socket.rooms) {
+      if (room != socket.id) {
+        roomId = room;
+      }
+    }
+
+    gameRooms = gameRooms.filter((gR) => gR.getRoomId() != roomId);
+
+    io.in(roomId).emit("disconnection");
+  });
 });
 
 console.log("socketio and express are listening on port 8000");

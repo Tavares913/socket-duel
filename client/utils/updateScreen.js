@@ -8,11 +8,6 @@ const getContext = () => {
 };
 
 const updateScreen = (settings) => {
-  let ctx = getContext();
-
-  console.log(settings.fieldWidth, settings.fieldHeight);
-  ctx.clearRect(0, 0, settings.fieldWidth, settings.fieldHeight);
-
   if (drawingDetails == null) {
     requestAnimationFrame(() => {
       updateScreen(settings);
@@ -21,6 +16,10 @@ const updateScreen = (settings) => {
   } else if (drawingDetails.gameEnded) {
     return;
   }
+
+  let ctx = getContext();
+
+  ctx.clearRect(0, 0, settings.fieldWidth, settings.fieldHeight);
 
   for (let player of drawingDetails.players) {
     ctx.beginPath();

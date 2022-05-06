@@ -13,6 +13,7 @@ const Room = () => {
   const [gameInProgress, setGameInProgress] = useState(false);
   const [roundInProgress, setRoundInProgress] = useState(false);
   const [gameStartError, setGameStartError] = useState();
+  const [disconnection, setDisconnection] = useState(false);
   const [winner, setWinner] = useState(null);
   const [P1Score, setP1Score] = useState(0);
   const [P2Score, setP2Score] = useState(0);
@@ -29,7 +30,7 @@ const Room = () => {
   };
 
   const backToHomeHandler = () => {
-    drawingDetails = null;
+    drawingDetails = { gameEnded: true };
     router.push("/");
   };
 
@@ -83,6 +84,10 @@ const Room = () => {
 
     socket.on("winner", (playerNum) => {
       setWinner(playerNum);
+    });
+
+    socket.on("disconnection", () => {
+      setDisconnection(true);
     });
 
     window.addEventListener("keydown", updateDirection);
@@ -157,6 +162,16 @@ const Room = () => {
           <p className={classes.error}>
             The game can only start once there are 2 players
           </p>
+        )}
+        {disconnection && (
+          <>
+            <p className={classes.error}>
+              There has been a disconnection. Please exit the game room.
+            </p>
+            <button onClick={backToHomeHandler} className={classes.button}>
+              Back to Home
+            </button>
+          </>
         )}
       </div>
     </>

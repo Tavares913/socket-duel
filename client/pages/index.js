@@ -29,6 +29,7 @@ const Home = () => {
     });
 
     socket.on("room-created", (roomId) => {
+      socket.emit("get-settings");
       dispatch(gameDetailsActions.setRoomId(roomId));
       dispatch(gameDetailsActions.setPlayerNum(1));
       router.push(`/${roomId}`);

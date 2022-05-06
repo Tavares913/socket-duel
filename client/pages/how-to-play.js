@@ -21,8 +21,8 @@ const HowToPlay = () => {
           seconds, a new ball will spawn, and the first player to pick it up is
           able to shoot it. If you collide with your own ball, they&apos;ll
           bounce off of you, but if your opponent collides with one of your
-          balls, they&apos;ll lose the round. First to win {settings.firstTo}
-          rounds wins the game.
+          balls, they&apos;ll lose the round. First to win{" "}
+          {`${settings.firstTo}`} rounds wins the game.
         </p>
         <p>
           To get started, you can either create a room, or join one already
