@@ -1,0 +1,21 @@
+{
+  "name": "socket-duel",
+  "version": "1.0.0",
+  "description": "This is a 2 player socket game made using nextjs and socketio, create and join rooms and battle first to three to win.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tavares913/socket-duel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tavares913/socket-duel/issues"
+  },
+  "homepage": "https://github.com/Tavares913/socket-duel#readme"
+}
