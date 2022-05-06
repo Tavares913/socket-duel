@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import classes from "../styles/HowToPlay.module.css";
 
-const howToPlay = () => {
+const HowToPlay = () => {
   const settings = useSelector((state) => state.gameDetails.settings);
 
   return (
@@ -39,4 +39,4 @@ const howToPlay = () => {
   );
 };
 
-export default howToPlay;
+export default HowToPlay;

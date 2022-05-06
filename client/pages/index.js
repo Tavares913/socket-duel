@@ -88,7 +88,7 @@ const Home = () => {
             </p>
           )}
           <div className={classes["how-to-play-link"]}>
-            <Link href="/howToPlay">How to Play</Link>
+            <Link href="/how-to-play">How to Play</Link>
           </div>
         </div>
       </div>
