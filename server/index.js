@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const randomstring = require("randomstring");
+
 const port = process.env.PORT || 8000;
 const expressServer = app.listen(port);
 
@@ -11,12 +13,11 @@ const io = socketio(expressServer, {
   },
 });
 
-const randomstring = require("randomstring");
+const GameRoom = require("./utils/classes/GameRoom");
+const Player = require("./utils/classes/Player");
 
-const GameRoom = require("../client/utils/classes/GameRoom");
-const Player = require("../client/utils/classes/Player");
+const settings = require("../settings");
 
-const settings = require("../client/utils/settings");
 const checkAndUpdateCollisions = require("./utils/checkAndUpdateCollisions");
 const checkAndUpdatePositions = require("./utils/checkAndUpdatePositions");
 

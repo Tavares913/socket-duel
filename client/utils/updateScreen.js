@@ -1,5 +1,5 @@
 import drawingDetails from "./drawingDetails";
-import settings from "./settings";
+import settings from "../../settings";
 
 const getContext = () => {
   let canvas = document.getElementById("game-area");

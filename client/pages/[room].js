@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import GameRoom from "../utils/classes/GameRoom";
 import socket from "../utils/socketConnect";
 import { useSelector } from "react-redux";
 import updateScreen from "../utils/updateScreen";
 import drawingDetails from "../utils/drawingDetails";
-import settings from "../utils/settings";
+import settings from "../../settings";
 
 import classes from "../styles/Room.module.css";
 
