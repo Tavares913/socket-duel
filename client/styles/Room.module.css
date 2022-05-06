@@ -1,0 +1,70 @@
+.game-area-container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-area {
+  border: 5px solid black;
+}
+
+.button {
+  border: 2px solid white;
+  background: none;
+  font-size: 1.5rem;
+}
+
+.button:hover {
+  border-bottom: 2px solid purple;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score span {
+  font-size: 4rem;
+  border-bottom: 2px solid lightcoral;
+}
+
+.room-id {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  font-size: 1.5rem;
+}
+
+.room-id p span {
+  border-bottom: 2px solid royalblue;
+}
+
+.round-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: red;
+}
+
+.winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winner p {
+  font-size: 3rem;
+}

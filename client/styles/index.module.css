@@ -1,0 +1,61 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background-color: white;
+  border: 2px solid white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 2%;
+}
+
+.button:hover {
+  border-bottom: 2px solid purple;
+}
+
+.join-room-form {
+  margin-top: 5%;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.join-room-form input {
+  font-size: 1.1rem;
+}
+
+.join-room-form label {
+  font-size: 1.1rem;
+}
+
+.join-room-form button {
+  font-size: 1.1rem;
+}
+
+.error {
+  color: red;
+  font-weight: 800;
+}
+
+.how-to-play-link {
+  font-weight: 400;
+  font-size: 1.5rem;
+  border: 2px solid white;
+}
+
+.how-to-play-link:hover {
+  border-bottom: 2px solid purple;
+}

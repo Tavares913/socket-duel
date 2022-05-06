@@ -1,0 +1,15 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 3% 0 3%;
+}
+
+.back-home-link {
+  font-size: 1.25rem;
+  border: 2px solid white;
+}
+
+.back-home-link:hover {
+  border-bottom: 2px solid purple;
+}
