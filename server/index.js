@@ -165,4 +165,4 @@ io.on("connection", (socket) => {
   });
 });
 
-console.log("socketio and express are listening on port 8000");
+console.log("socketio and express are listening on port " + port);
