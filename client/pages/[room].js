@@ -35,6 +35,11 @@ const Room = () => {
   };
 
   const updateDirection = (e) => {
+    if (e.key == " ") {
+      socket.emit("shot", { roomId, playerNum, direction });
+      return;
+    }
+
     if (e.key == "ArrowUp") {
       direction = "up";
     } else if (e.key == "ArrowDown") {
@@ -43,9 +48,12 @@ const Room = () => {
       direction = "left";
     } else if (e.key == "ArrowRight") {
       direction = "right";
-    } else if (e.key == " ") {
-      socket.emit("shot", { roomId, playerNum, direction });
     }
+    socket.emit("player-move", {
+      roomId,
+      playerNum,
+      direction,
+    });
   };
 
   useEffect(() => {
@@ -92,16 +100,7 @@ const Room = () => {
 
     window.addEventListener("keydown", updateDirection);
 
-    const playerMoveInterval = setInterval(() => {
-      socket.emit("player-move", {
-        roomId,
-        playerNum,
-        direction,
-      });
-    }, 33);
-
     return () => {
-      clearInterval(playerMoveInterval);
       window.removeEventListener("keydown", updateDirection);
     };
   }, []);

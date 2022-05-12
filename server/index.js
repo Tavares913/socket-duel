@@ -68,7 +68,7 @@ setInterval(() => {
       }
     }
   }
-}, 33);
+}, 1000 / settings.frameRate);
 
 io.on("connection", (socket) => {
   socket.on("get-settings", () => {

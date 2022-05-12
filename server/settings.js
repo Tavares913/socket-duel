@@ -9,6 +9,7 @@ let settings = {
   maxOrbSpeed: 10,
   pickupSpawnRate: 4000,
   shotCooldown: 2000,
+  frameRate: 20,
 };
 
 module.exports = settings;
